@@ -9,7 +9,7 @@ from pathlib import Path
 # Load the trained model
 @st.cache_resource
 def load_model():
-    model_path = "/content/drive/My Drive/Colab Notebooks/Model Deployment/backend_files/rf_tuned.joblib"
+    model_path = Path(__file__).resolve().parent / "rf_tuned.joblib"
     return joblib.load(model_path)
 
 model = load_model()
